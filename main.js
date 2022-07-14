@@ -1,4 +1,9 @@
 import * as v from "./js/varr.js"
 import * as f from "./js/function.js"
 
-console.log(v.num1);
+v.form.addEventListener("submit", (e)=>{
+    e.preventDefault();
+    let user = v.input.value;
+    
+    f.getUser(user);
+})
