@@ -2,6 +2,7 @@
 
 export const input = document.getElementById("user-search")
 export const form = document.querySelector(".form")
+export const profileDetails = document.querySelector(".profile-details")
 export const img = document.querySelector(".img-thumbnail")
 export const followers = document.getElementById("follwers")
 export const following = document.getElementById("following")

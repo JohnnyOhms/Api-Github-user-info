@@ -23,38 +23,38 @@ export async function getUser(user){
 }
 
 function displayProfile(data){
-    let Display;
-    displayProfile.innerHTML = `
+    let display;
+
+    display = `
         <div class="Profile mt-4 m-5">
-        <img src="image.jpg" class="img-thumbnail rounded-circle" alt="img">
+        <img src="${data.avatar_url}" class="img-thumbnail rounded-circle" alt="img">
         <div class="username d-flex justify-content-start mt-5">
-            <h1 class="">${}</h1>
+            <h1 class="">${data.name}</h1>
         </div>
         <div class="login d-flex justify-content-start mt-3">
-            <h3 class="">${}</h3>
+            <h3 class="">${data.login}</h3>
         </div>
         <div class="bio d-flex justify-content-start mt-3">
-            <p class="">Software engineer. Frontend web development</p>
+            <p class="">${data.bio}</p>
         </div>
 
-        <!-- view profile btn-->
         <div class="view-profile d-grid">
-            <a href="#" target="_blank" class="btn btn-outline-secondary p-3 my-3" style="font-size:12px;font-weight:600;">View on Github</a>
+            <a href="${data.html_url}" target="_blank" class="btn btn-outline-secondary p-3 my-3" style="font-size:12px;font-weight:600;">View on Github</a>
         </div>
-        <!--  -->
         <div class="followers d-flex justify-content-start">
-            <p id="follwers">7 followers. </p>
-            <p id="following">14 following </p>
+            <p id="follwers">${data.followers} follwers .</p>
+            <p id="following">${data.following} following</p>
         </div>
         <div class="d-flex justify-content-start">
-            <p id="location"><i class="fa-solid fa-location-dot"></i> Uyo, Nigeria</p>
+            <p id="location"><i class="fa-solid fa-location-dot"></i>${data.location}</p>
         </div>
         <div class="d-flex justify-content-start">
-            <p id="blog"><i class="fa-solid fa-link"></i> https://Google.com</p>
+            <p id="blog"><i class="fa-solid fa-link"></i>${data.blog}</p>
         </div>
         <div class="d-flex justify-content-start">
-            <P id="twitter"><i class="fa-brands fa-twitter"></i>@Chinweikejohn22</P>
+            <P id="twitter"><i class="fa-brands fa-twitter"></i>${data.twitter_username}</P>
         </div>
     </div> 
     `
+    v.profileDetails.innerHTML = display;
 }
