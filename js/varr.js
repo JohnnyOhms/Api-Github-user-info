@@ -8,9 +8,9 @@ export const location = document.getElementById("location")
 export const blog = document.getElementById("blog")
 export const twitter = document.getElementById("twitter")
 export const alert = document.querySelector(".alert")
-export const section = document.querySelector(".section")
+export const alertParent = document.querySelector(".alert-parent")
 export const api = {
-    user: "https://api.github.com/users/",
+    user: "https://api.github.com/uses/",
     repos: "/repos",
     contribution: "https://ghchart.rshah.org/"
 }
