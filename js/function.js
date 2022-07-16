@@ -6,6 +6,7 @@ export async function getUser(user){
         if (fetchData.status >=200 && fetchData.status <= 299) {
             let result = await fetchData.json();
             console.log(result);
+            // checkNull(result);
             displayProfile(result);
 
         }else{
@@ -26,7 +27,7 @@ export async function getUser(user){
 
 function displayProfile(data){
     let display;
-
+    checkNull(data);
     display = `
         <div class="Profile mt-4 m-5">
         <img src="${data.avatar_url}" class="img-thumbnail rounded-circle" alt="img">
@@ -37,7 +38,7 @@ function displayProfile(data){
             <h3 class="">${data.login}</h3>
         </div>
         <div class="bio d-flex justify-content-start mt-3">
-            <p class="">${checkNull(data.bio)}</p>
+            <p class="">${data.bio}</p>
         </div>
 
         <div class="view-profile d-grid">
@@ -62,11 +63,18 @@ function displayProfile(data){
     v.alertParent.innerHTML = ""
 }
 
-function checkNull(value){
-    if (value == null){
-        return ""
+function checkNull(target){
+//     if (value == null){
+//         return ""
+//     }
+//     return value;
+    for(const value in target){
+        if(target[value] == null){
+            // return target[value] = " not Null"
+            console.log(target[value]);
+        }
+        return target[value];
     }
-    return value;
 }
 
 export async function overViewRepo(user){
@@ -74,10 +82,44 @@ export async function overViewRepo(user){
     if(fetchData.status >= 200  && fetchData.status <= 299){
         let result  = await fetchData.json()
         console.log(result);
+        // checkNull(result)
         displayOverview(result)
     }else{
         return;
     }
 }
 
+function displayOverview(data){
+    shuffleRepo(data);
+    let overView;
 
+    data.forEach((repo)=>{
+        overView += `
+            <div class="border rounded p-3 m-4">
+                <span>
+                    <a href="${repo.clone_url}" target="_blank" rel="noopener noreferrer">
+                        ${repo.name}
+                    </a>
+                </span>
+                <div class="des pt-2">
+                    <p>${repo.description}</p>
+                    <p class="">${repo.language}</p>
+                    <i class="fa-regular fa-star"><span>${repo.stargazers_count}</span></i>
+                </div>
+            </div>
+        `
+    })
+    v.overview.innerHTML = overView;
+}
+
+function shuffleRepo(array){
+    let currenIndex = array.length, randomIndex;
+    while(currenIndex != 0){
+        randomIndex = Math.floor(Math.random() * currenIndex)
+        currenIndex --;
+
+        [array[currenIndex], array[randomIndex]] = 
+        [array[randomIndex], array[currenIndex]]
+    }
+    return array
+}
