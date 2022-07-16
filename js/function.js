@@ -91,23 +91,20 @@ export async function overViewRepo(user){
 
 function displayOverview(data){
     shuffleRepo(data);
-    let overView;
-
-    data.forEach((repo)=>{
-        overView += `
-            <div class="border rounded p-3 m-4">
-                <span>
-                    <a href="${repo.clone_url}" target="_blank" rel="noopener noreferrer">
-                        ${repo.name}
-                    </a>
-                </span>
-                <div class="des pt-2">
-                    <p>${repo.description}</p>
-                    <p class="">${repo.language}</p>
-                    <i class="fa-regular fa-star"><span>${repo.stargazers_count}</span></i>
-                </div>
-            </div>
-        `
+    
+    let overView = data.map((repo)=>{
+            return `<div class="border rounded p-3 m-4">
+                        <span>
+                            <a href="${repo.clone_url}" target="_blank" rel="noopener noreferrer">
+                                ${repo.name}
+                            </a>
+                        </span>
+                        <div class="des pt-2">
+                            <p>${repo.description}</p>
+                            <p class="">${repo.language}</p>
+                            <i class="fa-regular fa-star"><span>${repo.stargazers_count}</span></i>
+                        </div>
+                    </div>`
     })
     v.overview.innerHTML = overView;
 }
