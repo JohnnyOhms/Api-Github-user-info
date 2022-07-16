@@ -60,7 +60,7 @@ input[type=radio]{
 
 #first-select:checked ~ .content-overview{
     display: grid;
-    grid-template-columns: repeat(2, minmax(25rem,1fr));
+    grid-template-columns: repeat(2, minmax(20rem,1fr));
     row-gap: 2rem;
     column-gap: 0.5rem;
 }
@@ -76,6 +76,11 @@ label{
 }
 
 /* end */
+
+a{
+    font-size: 16px;
+    text-decoration: none;
+}
 
 
 

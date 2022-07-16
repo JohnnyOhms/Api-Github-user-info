@@ -85,6 +85,7 @@ export async function overViewRepo(user){
         // checkNull(result)
         displayOverview(result)
         displayRepo(result)
+        console.log(v.overview);
     }else{
         return;
     }
@@ -122,14 +123,14 @@ function displayRepo(data){
                             <a href="${repo.clone_url}" target="_blank" rel="noopener noreferrer">
                                  ${repo.name}
                             </a>
-                            <p class="public ms-4 border rounded-pill p-1">${data.visibility}</P>
+                            <p class="public ms-4 border rounded-pill p-1">${repo.visibility}</P>
                         </span>
                         <p>${repo.description}</p>
                         <p class="">${repo.language}</p>
                     </div>
 
                     <div class="star">
-                        <i class="fa-regular fa-star pt-5">${repo.stargazers_count}/i>
+                        <i class="fa-regular fa-star pt-5">${repo.stargazers_count}</i>
                     </div>
                 </div>  
             </div>`
