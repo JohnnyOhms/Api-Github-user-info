@@ -27,7 +27,7 @@ export async function getUser(user){
 
 function displayProfile(data){
     let display;
-    checkNull(data);
+    // checkNull(data);
     display = `
         <div class="Profile mt-4 m-5">
         <img src="${data.avatar_url}" class="img-thumbnail rounded-circle" alt="img">
@@ -38,7 +38,7 @@ function displayProfile(data){
             <h3 class="">${data.login}</h3>
         </div>
         <div class="bio d-flex justify-content-start mt-3">
-            <p class="">${data.bio}</p>
+            <p class="">${checkNull(data.bio)}</p>
         </div>
 
         <div class="view-profile d-grid">
@@ -64,10 +64,10 @@ function displayProfile(data){
 }
 
 function checkNull(target){
-//     if (value == null){
-//         return ""
-//     }
-//     return value;
+    if (target == null){
+        return ""
+    }
+    return target;
     for(const value in target){
         if(target[value] == null){
             // return target[value] = " not Null"
@@ -84,6 +84,7 @@ export async function overViewRepo(user){
         console.log(result);
         // checkNull(result)
         displayOverview(result)
+        displayRepo(result)
     }else{
         return;
     }
@@ -92,7 +93,8 @@ export async function overViewRepo(user){
 function displayOverview(data){
     shuffleRepo(data);
     
-    let overView = data.map((repo)=>{
+    let overView;
+    overView = data.map((repo)=>{
             return `<div class="border rounded p-3 m-4">
                         <span>
                             <a href="${repo.clone_url}" target="_blank" rel="noopener noreferrer">
@@ -107,6 +109,33 @@ function displayOverview(data){
                     </div>`
     })
     v.overview.innerHTML = overView;
+}
+
+function displayRepo(data){
+    let repos
+    repos = data.map((repo)=>{
+     
+        return `<div class="border-top p-3">
+                <div class="d-flex justify-content-between">
+                    <div>
+                        <span class="d-flex ">
+                            <a href="${repo.clone_url}" target="_blank" rel="noopener noreferrer">
+                                 ${repo.name}
+                            </a>
+                            <p class="public ms-4 border rounded-pill p-1">${data.visibility}</P>
+                        </span>
+                        <p>${repo.description}</p>
+                        <p class="">${repo.language}</p>
+                    </div>
+
+                    <div class="star">
+                        <i class="fa-regular fa-star pt-5">${repo.stargazers_count}/i>
+                    </div>
+                </div>  
+            </div>`
+    })
+    v.repo.innerHTML = repos;
+
 }
 
 function shuffleRepo(array){
