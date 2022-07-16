@@ -6,6 +6,7 @@ v.form.addEventListener("submit", (e)=>{
     let user = v.input.value;
     if(user !== ""){
         f.getUser(user);
+        f.overViewRepo(user)
 
     }else{
         v.alertParent.innerHTML =""
@@ -17,5 +18,4 @@ v.form.addEventListener("submit", (e)=>{
             `
             v.alertParent.appendChild(mssg) 
     }
-    
 })
