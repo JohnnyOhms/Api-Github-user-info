@@ -82,7 +82,6 @@ export async function overViewRepo(user){
     if(fetchData.status >= 200  && fetchData.status <= 299){
         let result  = await fetchData.json()
         console.log(result);
-        // checkNull(result)
         displayOverview(result)
         displayRepo(result)
         showContributionBoard(user);
@@ -113,29 +112,6 @@ function displayOverview(data){
     let h3 = document.createElement("h3")
     h3.innerHTML = "Overview";
     v.overview.insertBefore(h3, v.overview.firstChild)
-
-    // let overView = document.createElement("div")
-    // data.slice(0, 4)
-    // data.forEach((repo)=>{
-    //     overView.innerHTML += `
-    //     <div class="border rounded p-3">
-    //         <span>
-    //             <a href="${repo.clone_url}" target="_blank" rel="noopener noreferrer">
-    //                 ${repo.name}
-    //             </a>
-    //         </span>
-    //         <div class="des pt-2">
-    //             <p>${checkNull(repo.description)}</p>
-    //             <p class="">${repo.language}</p>
-    //             <i class="fa-regular fa-star"><span>${repo.stargazers_count}</span></i>
-    //         </div>
-    //     </div>`
-
-    //     v.overview.appendChild(overView)
-    // })
-    // data.slice(0, 4)
-
-
 }
 
 function displayRepo(data){
@@ -152,7 +128,7 @@ function displayRepo(data){
                             <p class="public ms-4 border rounded-pill p-1">${repo.visibility}</P>
                         </span>
                         <p>${repo.description}</p>
-                        <p class="">${repo.language}</p>
+                        <p class=""><i class="fa-solid fa-period"></i>${repo.language}</p>
                     </div>
 
                     <div class="star">

@@ -89,8 +89,9 @@ label{
 /* end */
 
 /* set display on checked */
-#first-select:checked ~ .first-radio{
+#first-select:checked ~ .nav .div .first-radio{
     padding-bottom: 20px;
+    color: red;
     
 }
 
@@ -98,9 +99,6 @@ label{
     border-bottom: 2px solid #444a46;
 }
 
-.img-fluid{
-    height: 5rem;
-}
 
 
 
