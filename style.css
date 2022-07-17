@@ -21,8 +21,14 @@ p{
     font-size: 13px;
 }
 
-nav{
+.nav{
     background-color: #444a46;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+   
+    
 }
 
 a{
