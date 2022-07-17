@@ -109,15 +109,40 @@ function displayOverview(data){
                         </div>
                     </div>`
     })
-    v.overview.innerHTML = overView.slice(0, 4);
- 
+    v.overview.innerHTML = overView.slice(0, 3);
+    let h3 = document.createElement("h3")
+    h3.innerHTML = "Overview";
+    v.overview.insertBefore(h3, v.overview.firstChild)
+
+    // let overView = document.createElement("div")
+    // data.slice(0, 4)
+    // data.forEach((repo)=>{
+    //     overView.innerHTML += `
+    //     <div class="border rounded p-3">
+    //         <span>
+    //             <a href="${repo.clone_url}" target="_blank" rel="noopener noreferrer">
+    //                 ${repo.name}
+    //             </a>
+    //         </span>
+    //         <div class="des pt-2">
+    //             <p>${checkNull(repo.description)}</p>
+    //             <p class="">${repo.language}</p>
+    //             <i class="fa-regular fa-star"><span>${repo.stargazers_count}</span></i>
+    //         </div>
+    //     </div>`
+
+    //     v.overview.appendChild(overView)
+    // })
+    // data.slice(0, 4)
+
+
 }
 
 function displayRepo(data){
     let repos
     repos = data.map((repo)=>{
      
-        return `<div class="border-top p-3">
+    return ` <div class="border-top p-3">
                 <div class="d-flex justify-content-between">
                     <div>
                         <span class="d-flex ">
@@ -136,7 +161,10 @@ function displayRepo(data){
                 </div>  
             </div>`
     })
+    let h3 =document.createElement("h3")
+    h3.innerHTML = "Repositories";
     v.repo.innerHTML = repos;
+    v.repo.insertBefore(h3, v.repo.firstChild)
     v.repo_count.innerHTML =`&nbsp;` + "(" + data.length + ")";
 
 }
