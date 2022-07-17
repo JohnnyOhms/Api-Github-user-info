@@ -15,9 +15,9 @@
     <title>Github Profile search</title>
 </head>
 <body>
-    <!-- navbar bootstrap style -->
     <!-- navbar-expand-lg
     navbar-light -->
+
     <nav class="navbar navbar-expand-lg navbar-light p-3">
         <div class="container-fluid">
             <!-- <div class="row">
@@ -25,12 +25,21 @@
                     <a href="#" class="navbar-brand" style="cursor: pointer;"><i class="fa-brands fa-github"></i></a>
                 <!-- </div> -->
                 <!-- <div class="col input-group input-group-lg "> -->
-                    
+
                     <form class="d-flex form">
                         <input type="text" name="" id="user-search" class="form-control bg-dark text-light" placeholder="Search Username">
                         <button class="btn btn-secondary px-3 mx-3">Search</button>
 
                     </form>
+                
+                    <div class="div">
+                        <label for="first-select" class="first-radio px-3">
+                            Overview
+                            </label>
+                        <label for="second-select" class="second-radio px-3">
+                        Repositories<span id="repo-count"></span>
+                        </label>
+                    </div>
                 <!-- </div> -->
             </div>
         </div>
