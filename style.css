@@ -72,16 +72,18 @@ label{
     font-weight: 600;
     font-size: 17px;
     cursor: pointer;
+    color: var(--white);
 }
 
 /* end */
 
 /* set display on checked */
-#first-select:checked ~ nav .first-radio{
-    border-bottom: 2px solid #444a46;
+#first-select:checked ~ .div .first-radio{
+    /* border-bottom: 2px solid #444a46; */
+    color: white;
 }
 
-#second-select:checked ~ nav .second-radio{
+#second-select:checked ~ .div .second-radio{
     border-bottom: 2px solid #444a46;
 }
 
