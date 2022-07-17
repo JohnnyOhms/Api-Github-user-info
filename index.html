@@ -16,7 +16,9 @@
 </head>
 <body>
     <!-- navbar bootstrap style -->
-    <nav class="navbar navbar-expand-lg navbar-light p-3">
+    <!-- navbar-expand-lg
+    navbar-light -->
+    <nav class="navbar p-3">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-2">
@@ -75,13 +77,15 @@
                             <input type="radio" name="tab" id="first-select" checked >
                             <input type="radio" name="tab" id="second-select">
 
-                            <nav class="navbar-expand-lg p-3" id="section-select">
-                                <label for="first-select" class="first-radio px-3">
-                                Overview
-                                </label>
-                                <label for="second-select" class="second-radio px-3">
-                                Repositories<span class="border rounded-pill center" id="repo-count"></span>
-                                </label>
+                            <nav class="navbar navbar-expand-lg" id="section-select">
+                                <div class="container-fluid">
+                                    <label for="first-select" class="first-radio px-3">
+                                    Overview
+                                    </label>
+                                    <label for="second-select" class="second-radio px-3">
+                                    Repositories<span id="repo-count"></span>
+                                    </label>
+                                </div>
                             </nav>
                             
                             <div class="alert-parent">
@@ -91,7 +95,6 @@
                             </div>
 
                             <section class="content content-overview">
-
                                 <!-- Overview repo -->
 
                                 <!-- <div class="border rounded p-3 m-4">

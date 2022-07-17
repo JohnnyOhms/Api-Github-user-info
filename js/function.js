@@ -95,7 +95,7 @@ function displayOverview(data){
     
     let overView;
     overView = data.map((repo)=>{
-            return `<div class="border rounded p-3 m-4">
+            return `<div class="border rounded p-3">
                         <span>
                             <a href="${repo.clone_url}" target="_blank" rel="noopener noreferrer">
                                 ${repo.name}
@@ -108,7 +108,7 @@ function displayOverview(data){
                         </div>
                     </div>`
     })
-    v.overview.innerHTML = overView.slice(0, 4);
+    v.overview.innerHTML = overView.slice(0, 2);
  
 }
 
@@ -136,7 +136,7 @@ function displayRepo(data){
             </div>`
     })
     v.repo.innerHTML = repos;
-    v.repo_count.innerHTML =`&nbsp;` + data.length;
+    v.repo_count.innerHTML =`&nbsp;` + "(" + data.length + ")";
 
 }
 

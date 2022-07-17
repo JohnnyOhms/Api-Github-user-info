@@ -59,9 +59,9 @@ input[type=radio]{
 
 #first-select:checked ~ .content-overview{
     display: grid;
-    grid-template-columns: repeat(2, minmax(20rem,1fr));
-    row-gap: 2rem;
-    column-gap: 0.5rem;
+    grid-template-columns: repeat(2, minmax(25rem,1fr));
+    /* row-gap: 3px;
+    column-gap: 2px; */
 }
 
 #second-select:checked ~ .content-repo {
