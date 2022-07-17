@@ -85,7 +85,6 @@ export async function overViewRepo(user){
         // checkNull(result)
         displayOverview(result)
         displayRepo(result)
-        console.log(v.overview);
     }else{
         return;
     }
@@ -109,7 +108,8 @@ function displayOverview(data){
                         </div>
                     </div>`
     })
-    v.overview.innerHTML = overView;
+    v.overview.innerHTML = overView.slice(0, 4);
+ 
 }
 
 function displayRepo(data){
@@ -136,6 +136,7 @@ function displayRepo(data){
             </div>`
     })
     v.repo.innerHTML = repos;
+    v.repo_count.innerHTML =`&nbsp;` + data.length;
 
 }
 

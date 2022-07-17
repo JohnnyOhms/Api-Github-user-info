@@ -1,12 +1,6 @@
 :root {
     --white:#fff;
     --black: #1c2b2d;
-    --blue: #31326f;
-    --light-blue: #005490;
-    --color-primary: #9d0919;
-    --color-sec: #db6400;
-    --color-grey: #ddd;
-    --color-dark-grey: #222831;
 }
 
 * {
@@ -29,6 +23,11 @@ p{
 
 nav{
     background-color: #444a46;
+}
+
+a{
+    font-size: 16px;
+    text-decoration: none;
 }
 
 .fa-github{
@@ -77,10 +76,15 @@ label{
 
 /* end */
 
-a{
-    font-size: 16px;
-    text-decoration: none;
+/* set display on checked */
+#first-select:checked ~ nav .first-radio{
+    border-bottom: 2px solid #444a46;
 }
+
+#second-select:checked ~ nav .second-radio{
+    border-bottom: 2px solid #444a46;
+}
+
 
 
 
