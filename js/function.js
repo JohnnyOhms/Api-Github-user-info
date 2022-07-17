@@ -85,6 +85,7 @@ export async function overViewRepo(user){
         // checkNull(result)
         displayOverview(result)
         displayRepo(result)
+        showContributionBoard(user);
     }else{
         return;
     }
@@ -102,13 +103,13 @@ function displayOverview(data){
                             </a>
                         </span>
                         <div class="des pt-2">
-                            <p>${repo.description}</p>
+                            <p>${checkNull(repo.description)}</p>
                             <p class="">${repo.language}</p>
                             <i class="fa-regular fa-star"><span>${repo.stargazers_count}</span></i>
                         </div>
                     </div>`
     })
-    v.overview.innerHTML = overView.slice(0, 2);
+    v.overview.innerHTML = overView.slice(0, 4);
  
 }
 
@@ -138,6 +139,13 @@ function displayRepo(data){
     v.repo.innerHTML = repos;
     v.repo_count.innerHTML =`&nbsp;` + "(" + data.length + ")";
 
+}
+
+function showContributionBoard(user){
+    v.contribution_bd.innerHTML = `
+        <h3 class= "mb-3">Total contributions</h3>
+        <img src="${v.api.contribution}${user}" alt="" class="img-fluid">
+    `
 }
 
 function shuffleRepo(array){

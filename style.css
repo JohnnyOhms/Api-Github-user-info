@@ -30,9 +30,7 @@ p{
     overflow: hidden;
     position: fixed;
     top: 0;
-    z-index: 1;
-   
-    
+    z-index: 1;  
 }
 
 a{
@@ -69,9 +67,9 @@ input[type=radio]{
 
 #first-select:checked ~ .content-overview{
     display: grid;
-    grid-template-columns: repeat(2, minmax(25rem,1fr));
-    /* row-gap: 3px;
-    column-gap: 2px; */
+    grid-template-columns: repeat(auto-fill, minmax(25rem,1fr));
+    row-gap: 1rem;
+    column-gap: 1rem;
 }
 
 #second-select:checked ~ .content-repo {
@@ -88,12 +86,12 @@ label{
 /* end */
 
 /* set display on checked */
-#first-select:checked ~ .div .first-radio{
-    /* border-bottom: 2px solid #444a46; */
-    color: white;
+#first-select:checked ~ .first-radio{
+    padding-bottom: 20px;
+    
 }
 
-#second-select:checked ~ .div .second-radio{
+#second-select:checked ~ .second-radio{
     border-bottom: 2px solid #444a46;
 }
 
