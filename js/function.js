@@ -10,8 +10,12 @@ export async function getUser(user){
             displayProfile(result);
 
         }else{
-            v.alertParent.innerHTML =""
-            v.profileDetails.innerHTML =""
+            v.alertParent.innerHTML = ""
+            v.profileDetails.innerHTML = ""
+            v.overview_parent.innerHTML = ""
+            v.repo.innerHTML = ""
+            v.contribution_bd.innerHTML= ""
+            v.repo_count.innerHTML = ""
             let mssg = document.createElement("div")
                 mssg.innerHTML =`
                 <div class="alert alert-danger d-grid" role="alert">
@@ -68,9 +72,11 @@ function checkNull(target){
         return ""
     }
     return target;
+
+    // loop through all and remove null
     for(const value in target){
         if(target[value] == null){
-            // return target[value] = " not Null"
+            return target[value] = ""
             console.log(target[value]);
         }
         return target[value];
@@ -128,7 +134,7 @@ function displayRepo(data){
                             <p class="public ms-4 border rounded-pill p-1">${repo.visibility}</P>
                         </span>
                         <p>${repo.description}</p>
-                        <p class=""><i class="fa-solid fa-period"></i>${repo.language}</p>
+                        <p class="">${repo.language}</p>
                     </div>
 
                     <div class="star">

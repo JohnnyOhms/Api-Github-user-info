@@ -19,3 +19,20 @@ v.form.addEventListener("submit", (e)=>{
             v.alertParent.appendChild(mssg) 
     }
 })
+window.onload = ()=>{
+    firstChecked();
+}
+
+v.first_radio.addEventListener("click", firstChecked)
+
+function firstChecked(){
+    v.second_radio.style.color = "white"
+    v.first_radio.style.color = "orangeRed"
+}
+
+v.second_radio.addEventListener("click", secondChecked)
+
+function secondChecked (){
+    v.first_radio.style.color = "white"
+    v.second_radio.style.color = "orangeRed"
+}

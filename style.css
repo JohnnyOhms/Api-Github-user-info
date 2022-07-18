@@ -56,7 +56,6 @@ a:hover{
 }
 
 /* Radio checked */
-
 input[type=radio]{
     display: none;
 }
@@ -86,18 +85,7 @@ label{
     cursor: pointer;
     color: var(--white);
 }
-/* end */
 
-/* set display on checked */
-#first-select:checked ~ .nav .div .first-radio{
-    padding-bottom: 20px;
-    color: red;
-    
-}
-
-#second-select:checked ~ .second-radio{
-    border-bottom: 2px solid #444a46;
-}
 
 
 
