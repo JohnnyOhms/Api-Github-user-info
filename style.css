@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=Encode+Sans+Condensed:wght@100&family=Lobster&family=Sofia&display=swap');
+
 :root {
     --white:#fff;
     --black: #1c2b2d;
@@ -15,6 +17,7 @@ html {
 
 body{
     font-size: 11px;
+
 }
 
 p{
@@ -84,6 +87,11 @@ label{
     font-size: 17px;
     cursor: pointer;
     color: var(--white);
+}
+
+.display-mssg{
+    font-size: 30px;
+    font-family: "Lobster Two";
 }
 
 

@@ -3,6 +3,7 @@ import * as f from "./js/function.js"
 
 v.form.addEventListener("submit", (e)=>{
     e.preventDefault();
+    v.title.innerHTML = ""
     let user = v.input.value;
     if(user !== ""){
         f.getUser(user);

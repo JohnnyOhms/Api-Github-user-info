@@ -1,5 +1,5 @@
 //Variables
-
+export const title = document.getElementById("title")
 export const input = document.getElementById("user-search")
 export const form = document.querySelector(".form")
 export const profileDetails = document.querySelector(".profile-details")
