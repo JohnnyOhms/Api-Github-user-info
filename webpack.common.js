@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 
 module.exports = {
@@ -6,9 +5,7 @@ module.exports = {
     main: "./src/index.js",
     vendor: "./src/vendor.js"
   },
-    plugins: [new HtmlWebpackPlugin({
-        template: "./src/template.html",
-    }), new MiniCssExtractPlugin({filename: "bootsCss.[contenthash].css"})],
+    plugins: [new MiniCssExtractPlugin({filename: "bootsCss.[contenthash].css"})],
     module: {
       rules: [
         {
