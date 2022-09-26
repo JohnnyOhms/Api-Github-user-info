@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster+Two&family=Encode+Sans+Condensed:wght@100&family=Lobster&family=Sofia&display=swap');
+
+:root {
+    --white:#fff;
+    --black: #1c2b2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+}
+
+body{
+    font-size: 11px;
+}
+
+p{
+    font-size: 13px;
+}
+
+.con{
+    margin-top: 60px;
+}
+
+.nav{
+    background-color: #444a46;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1;  
+}
+
+a{
+    font-size: 16px;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+.fa-github{
+    color: var(--white);
+    font-size: 28px;
+}
+
+::placeholder{
+    color: var(--white);
+}
+
+#section-select{
+    background-color: var(--white);
+}
+
+/* Radio checked */
+input[type=radio]{
+    display: none;
+}
+
+.content {
+    display: none;
+}
+
+#first-select:checked ~ .contribution-bd{
+    display: block;
+}
+
+#first-select:checked ~ .content-overview{
+    display: grid;
+    grid-template-columns: repeat(auo-fill, minmax(25rem,1fr));
+    row-gap: 0.5rem;
+    column-gap: 0.5rem;
+}
+
+#second-select:checked ~ .content-repo {
+    display: block;
+}
+
+label{
+    font-weight: 600;
+    font-size: 17px;
+    cursor: pointer;
+    color: var(--white);
+}
+
+.display-mssg{
+    font-size: 30px;
+    font-family: "Lobster Two";
+}
+
+
+
+
+
+
+
+

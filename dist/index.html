@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/2dfc8161ff.js" crossorigin="anonymous"></script>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <title>Github Profile search</title>
+<script defer src="main.bundle.js"></script><script defer src="vendor.bundle.js"></script></head>
+
+<body>
+    <div class="container-fluid navbar nav">
+        <a href="#" class="navbar-brand" style="cursor: pointer;"><i class="fa-brands fa-github"></i></a>
+        <div class="col input-group input-group-lg ">
+            <form class="d-flex form">
+                <input type="text" name="" id="user-search" class="form-control bg-dark text-light"
+                    placeholder="Search Username">
+                <button class="btn btn-primary px-3 mx-3">Search</button>
+            </form>
+        </div>
+        <div class="div">
+            <label for="first-select" class="first-radio px-2">
+                Overview
+            </label>
+            <label for="second-select" class="second-radio px-2">
+                Repositories<span id="repo-count"></span>
+            </label>
+        </div>
+    </div>
+    <div class="container-fluid con">
+        <div class="row">
+            <div class="col-md-3 profile-details">
+                
+            </div>
+            <div class="col-md-9">
+                <div class="contaner p-2 me-3">
+                    <div class="section">
+                        <input type="radio" name="tab" id="first-select" checked>
+                        <input type="radio" name="tab" id="second-select">
+                        <div class="alert-parent">
+
+                        </div>
+                        <div class="alert d-grid" role="alert" id="title">
+                            <p class="display-mssg">Github Profile Search</p>
+                        </div>
+                        <div class="content content-overview">
+                            <!-- Overview repo -->
+                            <div class="overview">
+                              
+                            </div>
+                        </div>
+                        <div class="content contribution-bd my-5">
+                        </div>
+
+                        <div class="content content-repo">
+                            <!-- Repositories -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,13 @@
+Webpack config 
+- mode : "production"     // compress the bundle file to smaller bit 
+- mode : "development"    // bundle the code in readable form 
+- devtool: "none"         //remove the eval() methode to make development easy to readable
+
+Webpack loaders
+install css-loader // load css file into the bundled js file
+install style-loader // inject css file into the DOM
+install sass-loader // to commplie sass file to css file
+
+plugins
+install html-Webpack-plugin // to link contentHash bundle via a templete
+
